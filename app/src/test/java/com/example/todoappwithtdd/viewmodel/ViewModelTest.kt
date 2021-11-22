@@ -1,4 +1,4 @@
-package com.example.todoappwithtdd.viewmodel.todo
+package com.example.todoappwithtdd.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.LiveData
@@ -17,12 +17,11 @@ import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.test.KoinTest
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
 
 @ExperimentalCoroutinesApi // Dispatchers.setMain, resetMain 이 실험용 API 이기 때문에 이 어노세이션이 붙는다.
-internal class ViewModelTest : KoinTest{
+internal abstract class ViewModelTest : KoinTest{
     @get:Rule
     val mockitoRule : MockitoRule = MockitoJUnit.rule()
 
